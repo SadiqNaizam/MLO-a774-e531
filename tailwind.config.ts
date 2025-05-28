@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 export default {
 	darkMode: ["class"],
@@ -52,6 +53,10 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+        // Added to map PRD color names to CSS variables for utility classes
+        primaryText: 'hsl(var(--foreground))', // PRD primaryText: #212529
+        secondaryText: 'hsl(var(--muted-foreground))', // PRD secondaryText: #878A99
+        ctaButton: 'hsl(var(--primary))', // PRD ctaButton: #00B8D9
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -64,10 +69,13 @@ export default {
 				}
 			},
 			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
+				lg: 'var(--radius)', // 0.5rem (corresponds to PRD default: rounded-lg)
+				md: 'calc(var(--radius) - 2px)', // 0.375rem (corresponds to PRD buttons: rounded-md)
 				sm: 'calc(var(--radius) - 4px)'
 			},
+      fontFamily: {
+        sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+      },
 			keyframes: {
 				'accordion-down': {
 					from: {
