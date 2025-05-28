@@ -1,14 +1,18 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React from 'react';
+import LoginCard from '../components/Login/LoginCard';
 
-const Index = () => {
+/**
+ * LoginPage serves as the main entry point for the login screen.
+ * It utilizes a centered layout to display the LoginCard component.
+ * This page corresponds to the "Login Screen" target page and implements
+ * the "CenteredFormLayout" template by applying overall layout styles.
+ */
+const IndexPage: React.FC = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="flex justify-center items-center min-h-screen bg-background">
+      <LoginCard />
     </div>
   );
 };
 
-export default Index;
+export default IndexPage;
