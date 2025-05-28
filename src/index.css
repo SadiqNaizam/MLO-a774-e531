@@ -1,57 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 195 65% 15%; /* PRD: #0E3440 */
+    --foreground: 210 10% 15%; /* PRD: primaryText #212529 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%; /* PRD: surface #FFFFFF */
+    --card-foreground: 210 10% 15%; /* PRD: primaryText #212529 on surface */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%; /* PRD: surface #FFFFFF */
+    --popover-foreground: 210 10% 15%; /* PRD: primaryText #212529 on surface */
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 190 100% 43%; /* PRD: ctaButton #00B8D9 */
+    --primary-foreground: 0 0% 100%; /* White text for ctaButton */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 40% 96.1%; /* Existing - No direct PRD replacement */
+    --secondary-foreground: 222.2 47.4% 11.2%; /* Existing */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 40% 96.1%; /* Existing - No direct PRD replacement */
+    --muted-foreground: 228 10% 60%; /* PRD: secondaryText #878A99 */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 210 40% 96.1%; /* Existing */
+    --accent-foreground: 222.2 47.4% 11.2%; /* Existing */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%; /* Existing */
+    --destructive-foreground: 210 40% 98%; /* Existing */
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 214.3 31.8% 91.4%; /* Existing - PRD implies borders, no specific color */
+    --input: 214.3 31.8% 91.4%; /* Existing - PRD implies input borders, no specific color */
+    --ring: 222.2 84% 4.9%; /* Existing - PRD does not specify ring color */
 
-    --radius: 0.5rem;
+    --radius: 0.5rem; /* PRD: effects.borderRadius.default "rounded-lg" (typically 0.5rem) */
 
+    /* Sidebar variables from original file - preserve as they don't conflict */
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
+    /* Preserving existing dark mode variables as PRD doesn't specify dark mode for login form */
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
@@ -68,7 +65,7 @@
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted-foreground: 215 20.2% 65.1%; /* Original dark muted-foreground */
 
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
@@ -97,5 +94,8 @@
 
   body {
     @apply bg-background text-foreground;
+    /* Nunito font will be applied via Tailwind's base styles after config update */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
